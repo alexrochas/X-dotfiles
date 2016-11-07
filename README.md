@@ -1,4 +1,4 @@
-# i3 Dotfiles
+# X Dotfiles
 
 These are my dotfiles for X configurations like terminal and xscreensaver.
 
