@@ -13,7 +13,7 @@ exec /usr/bin/xscreensaver -no-splash &
 #exec workrave &
 
 #display config
-#exec /home/alex/.displayConfig.sh &
+exec /home/alex/.display &
 
 #i3
 exec i3
