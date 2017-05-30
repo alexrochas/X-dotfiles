@@ -29,11 +29,13 @@ echo $DISPLAY >> /home/alex/.debug
 
 xrandr --display :0 >> /home/alex/.debug
 
-xrandr --output $SECONDARY --mode 1920x1080 >> /home/alex/.debug
-
-xrandr --output $PRIMARY --mode 1366x768 >> /home/alex/.debug
-
-xrandr --output $SECONDARY --left-of $PRIMARY >> /home/alex/.debug
-
+if xrandr | grep "$SECONDARY disconnected"; then
+    echo "Disconnected $SECONDARY" >> /home/alex/.debug
+    xrandr --output $SECONDARY --off --output $PRIMARY --auto
+else
+    xrandr --output $SECONDARY --mode 1920x1080 >> /home/alex/.debug
+    xrandr --output $PRIMARY --mode 1366x768 >> /home/alex/.debug
+    xrandr --output $SECONDARY --left-of $PRIMARY >> /home/alex/.debug
+fi
 # Here I run the script for change wallpaper. Should not be here!
 # /home/alex/.change_wallpaper.sh
