@@ -15,5 +15,8 @@ exec /usr/bin/xscreensaver -no-splash &
 #display config
 exec /home/alex/.display &
 
+#redshift
+exec redshift-gtk &
+
 #i3
 exec i3
