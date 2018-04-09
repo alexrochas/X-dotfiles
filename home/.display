@@ -14,8 +14,8 @@
 #https://wiki.archlinux.org/index.php/xrandr
 
 # Should change if my config is different.
-PRIMARY="eDP1"
-SECONDARY="HDMI1"
+PRIMARY="eDP-1"
+SECONDARY="HDMI-1"
 
 # Necessary since i'm running as root.
 export HOME=/home/alex
