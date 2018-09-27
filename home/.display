@@ -15,7 +15,7 @@
 
 # Should change if my config is different.
 PRIMARY="eDP-1"
-SECONDARY="HDMI-1"
+SECONDARY=`xrandr | grep -P '^\K(.*)(?=\sconnected)' | grep -v 'primary' | grep -Po '^\K(.*)(?=\sconnected)'`
 
 # Necessary since i'm running as root.
 export HOME=/home/alex
@@ -29,13 +29,15 @@ echo $DISPLAY >> /home/alex/.debug
 
 xrandr --display :0 >> /home/alex/.debug
 
-if xrandr | grep "$SECONDARY disconnected"; then
+if [ -z "$SECONDARY" ]; then
+    SECONDARY=`xrandr | grep -P "^\K(.*)(?=\sdisconnected)" | grep "0mm x 0mm" | grep -Po "^\K(.*)(?=\sdisconnected)"`
     echo "Disconnected $SECONDARY" >> /home/alex/.debug
     xrandr --output $SECONDARY --off --output $PRIMARY --auto
 else
-    xrandr --output $SECONDARY --mode 1920x1080 >> /home/alex/.debug
+    xrandr --output $SECONDARY --mode 1280x1024 >> /home/alex/.debug
     xrandr --output $PRIMARY --mode 1366x768 >> /home/alex/.debug
-    xrandr --output $SECONDARY --left-of $PRIMARY >> /home/alex/.debug
+    xrandr --output $SECONDARY --right-of $PRIMARY >> /home/alex/.debug
 fi
+
 # Here I run the script for change wallpaper. Should not be here!
 # /home/alex/.change_wallpaper.sh

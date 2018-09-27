@@ -41,8 +41,11 @@ URxvt*saveLines: 65535
 #  Fedora/debian packages: liberation-mono-fonts/ttf-liberation
 #URxvt*font: xft:Liberation Mono:pixelsize=16:antialias=true:hinting=true
 #URxvt*boldFont: xft:Liberation Mono:bold:pixelsize=16:antialias=true:hinting=true
-URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=16:antialias=true:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:pixelsize=16:antialias=true:hinting=true
+#URxvt*font: xft:DejaVu Sans Mono for Powerline:pixelsize=16:antialias=true:hinting=true
+#URxvt*boldFont: xft:DejaVu Sans Mono for Powerline:bold:pixelsize=16:antialias=true:hinting=true
+# instaled from https://github.com/ryanoasis/nerd-fonts
+URxvt*font: xft:Hack Nerd Font Mono:pixelsize=16:antialias=true:hinting=true
+URxvt*boldFont: xft:Hack Nerd Font Mono:bold:pixelsize=16:antialias=true:hinting=true
 #
 # Xft: Terminus fonts
 #  Fedora/debian packages: terminus-fonts/xfonts-terminus
